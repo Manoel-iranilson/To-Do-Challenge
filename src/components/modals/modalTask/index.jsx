@@ -75,7 +75,7 @@ export default function ModalTask({ isOpen, onClose, idTask }) {
     } else {
       dispatch(
         add({
-          id: 4,
+          id: Math.floor(Math.random() * 1000),
           name: data.name,
           description: data.description,
           completed: data.completed,
@@ -102,7 +102,7 @@ export default function ModalTask({ isOpen, onClose, idTask }) {
       <ModalContent>
         <form onSubmit={handleSubmit(onSubmit)}>
           <ModalHeader>
-            {idTask ? `Editar Tarefa - ${idTask}` : "Adicionar Tarefa"}
+            {idTask ? `Editar Tarefa` : "Adicionar Tarefa"}
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>

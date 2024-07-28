@@ -5,6 +5,7 @@ import { useMemo } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { getStatus } from "../../utils/getStatus";
+import Toobar from "./toolBar";
 
 const locales = {
   "pt-BR": pt,
@@ -62,8 +63,9 @@ export default function CalendarTasks({ tasks, setIdTask, onOpen }) {
   };
 
   return (
-    <div style={{ height: "730px" }}>
+    <div style={{ height: "780px" }}>
       <Calendar
+        toolbar={() => Toobar}
         localizer={localizer}
         events={eventsByTasks}
         startAccessor="start"
@@ -76,6 +78,7 @@ export default function CalendarTasks({ tasks, setIdTask, onOpen }) {
         eventPropGetter={eventPropGetter}
         components={{
           event: Event,
+          toolbar: Toobar,
         }}
       />
     </div>
